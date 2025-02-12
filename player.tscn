@@ -298,3 +298,7 @@ sprite_frames = SubResource("SpriteFrames_h5v0v")
 animation = &"back_idle"
 autoplay = "front_idle"
 frame_progress = 0.946236
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
