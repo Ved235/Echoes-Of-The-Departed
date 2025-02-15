@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drc5snuo54war"
+path="res://.godot/imported/cross-column.obj-12d9b9796b0bc2c337b099278e157eb5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cross-column.obj-12d9b9796b0bc2c337b099278e157eb5.mesh"]
+
+source_file="res://models/cross-column.obj"
+dest_files=["res://.godot/imported/cross-column.obj-12d9b9796b0bc2c337b099278e157eb5.mesh", "res://.godot/imported/cross-column.obj-12d9b9796b0bc2c337b099278e157eb5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

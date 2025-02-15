@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bcofbb1s3jwdm" path="res://scenes/grass_one.tscn" id="8_q2qhg"]
 [ext_resource type="MeshLibrary" uid="uid://cyqm6bcu3ajke" path="res://tiles.tres" id="9_20mc2"]
 [ext_resource type="Script" path="res://scripts/graveyard_manager.gd" id="12_81du0"]
-[ext_resource type="PackedScene" uid="uid://tg7sp0cs0je6" path="res://maintenance_spot.tscn" id="13_my4j0"]
-[ext_resource type="PackedScene" uid="uid://dad3nrkarvm3n" path="res://overgrown_grass.tscn" id="13_ywnne"]
-[ext_resource type="PackedScene" uid="uid://cmkfcwwvvaq45" path="res://broken_lamp.tscn" id="14_ocbsb"]
+[ext_resource type="PackedScene" uid="uid://tg7sp0cs0je6" path="res://scenes/maintenance_spot.tscn" id="13_my4j0"]
+[ext_resource type="PackedScene" uid="uid://dad3nrkarvm3n" path="res://scenes/overgrown_grass.tscn" id="13_ywnne"]
+[ext_resource type="PackedScene" uid="uid://cmkfcwwvvaq45" path="res://scenes/broken_lamp.tscn" id="14_ocbsb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5wqlk"]
 panorama = ExtResource("1_mhrgv")

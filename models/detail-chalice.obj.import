@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1dbgm4a5nbj5"
+path="res://.godot/imported/detail-chalice.obj-d2071d5c2a92d3d805112973ba1880ab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail-chalice.obj-d2071d5c2a92d3d805112973ba1880ab.mesh"]
+
+source_file="res://models/detail-chalice.obj"
+dest_files=["res://.godot/imported/detail-chalice.obj-d2071d5c2a92d3d805112973ba1880ab.mesh", "res://.godot/imported/detail-chalice.obj-d2071d5c2a92d3d805112973ba1880ab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cknu22h7byu5n"
+path="res://.godot/imported/pillar-square.obj-78649e456d4956bab55b09d23b0be92b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pillar-square.obj-78649e456d4956bab55b09d23b0be92b.mesh"]
+
+source_file="res://models/pillar-square.obj"
+dest_files=["res://.godot/imported/pillar-square.obj-78649e456d4956bab55b09d23b0be92b.mesh", "res://.godot/imported/pillar-square.obj-78649e456d4956bab55b09d23b0be92b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

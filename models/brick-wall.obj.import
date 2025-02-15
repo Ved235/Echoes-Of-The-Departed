@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtdkp35i1g7mn"
+path="res://.godot/imported/brick-wall.obj-73d09b6cdebfbe960ef80b5919d55bf8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/brick-wall.obj-73d09b6cdebfbe960ef80b5919d55bf8.mesh"]
+
+source_file="res://models/brick-wall.obj"
+dest_files=["res://.godot/imported/brick-wall.obj-73d09b6cdebfbe960ef80b5919d55bf8.mesh", "res://.godot/imported/brick-wall.obj-73d09b6cdebfbe960ef80b5919d55bf8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

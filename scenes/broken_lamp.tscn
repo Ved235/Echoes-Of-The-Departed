@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmkfcwwvvaq45"]
+
+[ext_resource type="PackedScene" uid="uid://tg7sp0cs0je6" path="res://scenes/maintenance_spot.tscn" id="1_biagx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8tqxv"]
+height = 3.0
+radius = 2.0
+
+[node name="MaintenanceSpot" instance=ExtResource("1_biagx")]
+
+[node name="InteractionArea" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="InteractionArea" index="0"]
+visible = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InteractionArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_8tqxv")
+
+[node name="Visual" parent="." index="1"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+visible = false

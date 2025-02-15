@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://8dfsrlq70vrb"
+path="res://.godot/imported/hay-bale-bundled.obj-b343190e063cddf045a6a2273b336e8b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hay-bale-bundled.obj-b343190e063cddf045a6a2273b336e8b.mesh"]
+
+source_file="res://models/hay-bale-bundled.obj"
+dest_files=["res://.godot/imported/hay-bale-bundled.obj-b343190e063cddf045a6a2273b336e8b.mesh", "res://.godot/imported/hay-bale-bundled.obj-b343190e063cddf045a6a2273b336e8b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

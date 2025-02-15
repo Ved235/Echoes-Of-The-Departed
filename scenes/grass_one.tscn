@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcofbb1s3jwdm"]
 
-[ext_resource type="ArrayMesh" uid="uid://2kpp41wydqhi" path="res://Obj/CountrySide-3-GroundTile1.obj" id="1_r6nol"]
+[ext_resource type="ArrayMesh" uid="uid://cdfonlir1omyy" path="res://models/CountrySide-3-GroundTile1.obj" id="1_r6nol"]
 
 [node name="Grass_one" type="Node3D"]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)

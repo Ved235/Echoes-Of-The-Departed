@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://db7p5v2gwacd8"
+path="res://.godot/imported/gravestone-bevel.obj-f0998954445035ea5c3b1ae98c6ea92f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gravestone-bevel.obj-f0998954445035ea5c3b1ae98c6ea92f.mesh"]
+
+source_file="res://models/gravestone-bevel.obj"
+dest_files=["res://.godot/imported/gravestone-bevel.obj-f0998954445035ea5c3b1ae98c6ea92f.mesh", "res://.godot/imported/gravestone-bevel.obj-f0998954445035ea5c3b1ae98c6ea92f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
