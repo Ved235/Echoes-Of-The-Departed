@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpelk8tsqniwb"]
+
+[ext_resource type="PackedScene" uid="uid://cirhstlhvhbh3" path="res://models/kenny/gravestone-wide.glb" id="1_7t4ig"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k0juk"]
+points = PackedVector3Array(-0.377346, 0.00767766, -0.1079, 0.115146, 0.473802, 0.0673, 0.387028, 0.093721, 0.1106, 0.399543, 0.0687423, -0.114143, -0.389632, -2.77556e-17, 0.107812, -0.349561, 0.418201, -0.0766784, 0.349561, 0.418201, -0.0766784, 0.389632, -2.77556e-17, 0.107812, -0.322423, 0.404638, 0.0673, 0.377346, 0.00767766, -0.1079, 0.322423, 0.404638, 0.0673, -0.387028, 0.093721, 0.1106, -0.387028, 0.093721, -0.114143, -0.109208, 0.461924, -0.0673, -0.115146, 0.473802, 0.0673, -0.399543, 0.0687423, -0.114143, 0.109208, 0.461924, -0.0673, 0.387028, 0.093721, -0.114143, -0.276394, 0.427677, 0.0673, 0.276394, 0.427677, 0.0673, 0.172719, 0.462214, 0.0673, -0.172719, 0.462214, 0.0673)
+
+[node name="Gravestone-wide" type="StaticBody3D"]
+
+[node name="gravestone-wide2" parent="." instance=ExtResource("1_7t4ig")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_k0juk")

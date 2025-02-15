@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://crdaga0r8lkak"]
+
+[ext_resource type="ArrayMesh" uid="uid://bv7bmh066x0ng" path="res://kenney_graveyard-kit/Models/OBJ format/lightpost-single.obj" id="1_nxgip"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0q303"]
+points = PackedVector3Array(0.0726233, 0.995221, 0.311267, -0.0732886, 0.995221, 0.311267, 0.0726233, 0.958562, 0.311267, 0.0726233, 0.995221, 0.165339, 0.0686528, 1.20253, 0.307268, -0.0732886, 0.995221, 0.165339, -0.0732886, 0.958562, 0.311267, -0.0693323, 1.20253, 0.307268, 0.0726233, 0.958562, 0.165339, 0.0646679, 0, 0.0646655, 0.0704952, 0.0469858, 0.0704951, 0.0704952, 0.0469858, -0.0705, 0.0686528, 1.20253, 0.1693, 0.0306751, 1.30089, 0.26448, -0.0705035, 0.0469858, -0.0705, -0.0732886, 0.958562, 0.165339, -0.0693323, 1.20253, 0.1693, -0.0705035, 0.0469858, 0.0704951, -0.0646762, 0, 0.0646655, -0.0313547, 1.30089, 0.26448, 0.0646679, 0, -0.0647077, 0.0309464, 1.2286, -0.0309631, 0.0221055, 1.31857, -0.0221439, 0.0306751, 1.30089, 0.212088, 0.0221055, 1.31857, 0.0221016, -0.0646762, 0, -0.0647077, -0.030969, 1.2286, -0.0309631, -0.0313547, 1.30089, 0.212088, -0.022128, 1.31857, -0.0221439, -0.022128, 1.31857, 0.0221016)
+
+[node name="Lightpost-single" type="Node3D"]
+
+[node name="Lightpost-single" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_nxgip")
+
+[node name="Lightpost-single_StaticBody" type="StaticBody3D" parent="Lightpost-single"]
+
+[node name="_CollisionShape3D_142961" type="CollisionShape3D" parent="Lightpost-single/Lightpost-single_StaticBody"]
+shape = SubResource("ConvexPolygonShape3D_0q303")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lightpost-single"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08795, 0.259033)
+light_color = Color(0.96679, 0.962088, 0.905025, 1)
+omni_range = 8.0

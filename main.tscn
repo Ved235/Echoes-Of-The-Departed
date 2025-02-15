@@ -1,0 +1,178 @@
+[gd_scene load_steps=20 format=3 uid="uid://bk15rwjmpxgqi"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_m6kce"]
+[ext_resource type="Texture2D" uid="uid://bad4uej6j8qiv" path="res://AllSkyFree_Sky_ColdNight_Equirect.png" id="1_mhrgv"]
+[ext_resource type="PackedScene" uid="uid://crdaga0r8lkak" path="res://scenes/lightpost_one.tscn" id="3_oj3q2"]
+[ext_resource type="PackedScene" uid="uid://b36gs872p8dyd" path="res://scenes/lightpost_two.tscn" id="4_lxdmy"]
+[ext_resource type="PackedScene" uid="uid://51bfa1dcqerp" path="res://scenes/lightpost_four.tscn" id="5_a4j5o"]
+[ext_resource type="PackedScene" uid="uid://my2casf7kmk0" path="res://scenes/grass_two.tscn" id="5_cq12w"]
+[ext_resource type="PackedScene" uid="uid://crnus7ufi4h4f" path="res://scenes/gravestone-cross.tscn" id="7_srp8a"]
+[ext_resource type="PackedScene" uid="uid://dghyvjep6n5oy" path="res://scenes/gravestone-bevel.tscn" id="7_xa33b"]
+[ext_resource type="PackedScene" uid="uid://dpelk8tsqniwb" path="res://scenes/gravestone-wide.tscn" id="8_0qolv"]
+[ext_resource type="PackedScene" uid="uid://bcofbb1s3jwdm" path="res://scenes/grass_one.tscn" id="8_q2qhg"]
+[ext_resource type="MeshLibrary" uid="uid://cyqm6bcu3ajke" path="res://tiles.tres" id="9_20mc2"]
+[ext_resource type="Script" path="res://scripts/graveyard_manager.gd" id="12_81du0"]
+[ext_resource type="PackedScene" uid="uid://tg7sp0cs0je6" path="res://maintenance_spot.tscn" id="13_my4j0"]
+[ext_resource type="PackedScene" uid="uid://dad3nrkarvm3n" path="res://overgrown_grass.tscn" id="13_ywnne"]
+[ext_resource type="PackedScene" uid="uid://cmkfcwwvvaq45" path="res://broken_lamp.tscn" id="14_ocbsb"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5wqlk"]
+panorama = ExtResource("1_mhrgv")
+
+[sub_resource type="Sky" id="Sky_cb6ok"]
+sky_material = SubResource("PanoramaSkyMaterial_5wqlk")
+
+[sub_resource type="Environment" id="Environment_fd7b3"]
+background_mode = 2
+sky = SubResource("Sky_cb6ok")
+fog_light_color = Color(0.096046, 0.100317, 0.16859, 1)
+fog_density = 0.03
+fog_sky_affect = 0.85
+volumetric_fog_enabled = true
+volumetric_fog_emission = Color(0.0941176, 0.101961, 0.168627, 1)
+volumetric_fog_sky_affect = 0.85
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_gdidm"]
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fd7b3")
+camera_attributes = SubResource("CameraAttributesPractical_gdidm")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.768982)
+use_collision = true
+size = Vector3(155, 1, 105)
+metadata/_edit_lock_ = true
+
+[node name="ProtoController" parent="." instance=ExtResource("1_m6kce")]
+transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -2.37412, 0, 3.66172)
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Lightpost-single" parent="Props" instance=ExtResource("3_oj3q2")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -6.05503, 0, 37.9612)
+
+[node name="Lightpost-single2" parent="Props" instance=ExtResource("3_oj3q2")]
+transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, 48.8068, 0, 8.17553)
+
+[node name="Lightpost-single4" parent="Props" instance=ExtResource("3_oj3q2")]
+transform = Transform3D(3.8637, 0, 1.03528, 0, 4, 0, -1.03528, 0, 3.8637, 25.415, 0, -1.69541)
+
+[node name="Lightpost-single3" parent="Props" instance=ExtResource("3_oj3q2")]
+transform = Transform3D(1.03528, 0, -3.8637, 0, 4, 0, 3.8637, 0, 1.03528, -24.6716, 0, 43.6916)
+
+[node name="Lightpost-double" parent="Props" instance=ExtResource("4_lxdmy")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -33.3889, 0, 17.4165)
+
+[node name="Lightpost-double2" parent="Props" instance=ExtResource("4_lxdmy")]
+transform = Transform3D(4.21201e-07, 0, -4, 0, 4, 0, 4, 0, 4.21201e-07, -6.25453, 0, -25.2911)
+
+[node name="Lightpost-double3" parent="Props" instance=ExtResource("4_lxdmy")]
+transform = Transform3D(-4, 0, -2.46355e-07, 0, 4, 0, 2.46355e-07, 0, -4, -64.8636, 0, 40.2693)
+
+[node name="Lightpost-all" parent="Props" instance=ExtResource("5_a4j5o")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.93858, 0, 9.86853)
+
+[node name="Lightpost-all2" parent="Props" instance=ExtResource("5_a4j5o")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -70.06, 0, 9.86853)
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Grass_one" parent="Ground" instance=ExtResource("8_q2qhg")]
+transform = Transform3D(7.87496, 0, 0, 0, 1, 0, 0, 0, 5.19888, 35.703, 0, 25.729)
+
+[node name="Grass_one2" parent="Ground" instance=ExtResource("8_q2qhg")]
+transform = Transform3D(7.87496, 0, 0, 0, 1, 0, 0, 0, 5.19888, -35.99, 0, 25.729)
+
+[node name="Grass_two" parent="Ground" instance=ExtResource("5_cq12w")]
+transform = Transform3D(8, 0, 0, 0, 0.977, 0, 0, 0, 5.199, -37.3314, 0, -23.9449)
+
+[node name="Grass_two2" parent="Ground" instance=ExtResource("5_cq12w")]
+transform = Transform3D(7.50737, 0, 0, 0, 1, 0, 0, 0, 5.31866, 37.4508, 0, -23.9449)
+
+[node name="Road" type="GridMap" parent="Ground"]
+transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 9, 0, 0.2, 0)
+mesh_library = ExtResource("9_20mc2")
+cell_size = Vector3(0.5, 1, 0.5)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 10, 655439, 0, 10, 79, 0, 9, 1441871, 65535, 9, 655439, 65535, 8, 1048655, 0, 8, 79, 0, 7, 1441871, 65535, 7, 655439, 65535, 6, 1048655, 0, 6, 79, 0, 5, 1441871, 65535, 5, 655439, 65535, 4, 1048655, 0, 4, 79, 0, 3, 1441871, 65535, 3, 655439, 65535, 2, 1048655, 0, 2, 79, 65535, 1, 1441871, 65534, 1, 655439, 65535, 0, 1048655, 65534, 0, 79, 0, 1, 655439, 1, 0, 1441871, 1, 1, 655439, 2, 0, 79, 2, 1, 1048655, 3, 0, 655439, 3, 1, 1048655, 4, 0, 79, 4, 1, 1441871, 5, 0, 1048655, 5, 1, 655439, 6, 0, 79, 6, 1, 1441871, 7, 0, 655439, 7, 1, 1048655, 8, 0, 79, 8, 1, 1441871, 9, 0, 1048655, 9, 1, 655439, 10, 0, 79, 10, 1, 1441871, 0, 0, 655439, 0, 65535, 1048655, 65535, 65535, 79, 0, 65534, 655439, 65535, 65534, 1048655, 65535, 65533, 79, 0, 65533, 1441871, 0, 65532, 1048655, 65535, 65532, 79, 65535, 65531, 1441871, 0, 65531, 655439, 0, 65530, 1048655, 65535, 65530, 79, 65535, 65529, 1441871, 0, 65529, 655439, 65535, 65528, 1048655, 65534, 65528, 79, 65534, 65529, 1441871, 65533, 1, 91, 65531, 1, 91, 65529, 1, 91, 65528, 1, 91, 65526, 1, 91, 65524, 1, 91, 65522, 1, 91, 65521, 2, 91, 65520, 3, 91, 65520, 5, 91, 65520, 6, 91, 65520, 8, 91, 65520, 9, 91, 65521, 10, 91, 65523, 10, 91, 65525, 10, 91, 65527, 10, 91, 65529, 10, 91, 65522, 6, 91, 65521, 7, 91, 65527, 9, 91, 65525, 9, 91, 65525, 2, 91, 65527, 2, 91, 65527, 3, 91, 65528, 2, 91)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Fence" type="GridMap" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh_library = ExtResource("9_20mc2")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(3, 12, 655418, 4, 12, 655418, 5, 12, 655418, 6, 12, 655418, 7, 12, 655418, 8, 12, 655418, 9, 12, 655418, 10, 12, 655418, 11, 12, 655418, 12, 12, 655418, 13, 12, 655418, 14, 12, 655418, 15, 12, 655418, 16, 12, 655418, 17, 12, 655418, 18, 12, 655416, 18, 11, 1441850, 18, 10, 1441850, 18, 9, 1441850, 18, 8, 1441850, 18, 7, 1441850, 18, 6, 1441850, 18, 5, 1441850, 18, 4, 1441850, 18, 3, 1441850, 18, 2, 1441850, 18, 1, 1441850, 18, 0, 1441850, 18, 65535, 1441850, 18, 65534, 1441850, 18, 65533, 1441850, 18, 65532, 1441850, 18, 65528, 1441850, 18, 65529, 1441850, 18, 65530, 1441850, 18, 65531, 1441850, 18, 65527, 1441850, 18, 65526, 1441850, 18, 65524, 1441850, 18, 65525, 1441850, 18, 65523, 1441848, 17, 65523, 58, 16, 65523, 58, 15, 65523, 58, 14, 65523, 58, 13, 65523, 58, 12, 65523, 58, 11, 65523, 58, 10, 65523, 58, 9, 65523, 58, 8, 65523, 58, 7, 65523, 58, 6, 65523, 58, 5, 65523, 58, 4, 65523, 58, 3, 65523, 58, 2, 65523, 58, 1, 65523, 58, 0, 65523, 58, 65535, 65523, 58, 65534, 65523, 58, 65533, 65523, 58, 65532, 65523, 58, 65531, 65523, 58, 65530, 65523, 58, 65529, 65523, 58, 65528, 65523, 58, 65527, 65523, 58, 65526, 65523, 58, 65525, 65523, 58, 65524, 65523, 58, 65523, 65523, 58, 65522, 65523, 58, 65521, 65523, 58, 65520, 65523, 58, 65519, 65523, 58, 65518, 65523, 58, 65517, 65523, 56, 65517, 65524, 1048634, 65517, 65525, 1048634, 65517, 65526, 1048634, 65517, 65527, 1048634, 65517, 65528, 1048634, 65517, 65529, 1048634, 65517, 65530, 1048634, 65517, 65531, 1048634, 65517, 65532, 1048634, 65517, 65533, 1048634, 65517, 65534, 1048634, 65517, 65535, 1048634, 65517, 0, 1048634, 65517, 1, 1048634, 65517, 2, 1048634, 65517, 3, 1048634, 65517, 4, 1048634, 65517, 5, 1048634, 65517, 6, 1048634, 65517, 7, 1048634, 65517, 8, 1048634, 65517, 9, 1048634, 65517, 10, 1048634, 65517, 11, 1048634, 65517, 12, 1048632, 65518, 12, 655418, 65519, 12, 655418, 65520, 12, 655418, 65521, 12, 655418, 65522, 12, 655418, 65523, 12, 655418, 65524, 12, 655418, 65525, 12, 655418, 65526, 12, 655418, 65527, 12, 655418, 65528, 12, 655418, 65529, 12, 655418, 65530, 12, 655418, 65531, 12, 655418, 65532, 12, 655418, 65533, 12, 655418, 65534, 12, 655418, 65535, 12, 655417, 0, 12, 655417, 1, 12, 655418, 2, 12, 655418)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Graves" type="Node3D" parent="."]
+
+[node name="Gravestone-cross" parent="Graves" instance=ExtResource("7_srp8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -24)
+
+[node name="Gravestone-cross2" parent="Graves" instance=ExtResource("7_srp8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -24)
+
+[node name="Gravestone-cross3" parent="Graves" instance=ExtResource("7_srp8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -24)
+
+[node name="Gravestone-cross4" parent="Graves" instance=ExtResource("7_srp8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -24)
+
+[node name="Gravestone-bevel" parent="Graves" instance=ExtResource("7_xa33b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -40)
+
+[node name="Gravestone-bevel2" parent="Graves" instance=ExtResource("7_xa33b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -40)
+
+[node name="Gravestone-bevel3" parent="Graves" instance=ExtResource("7_xa33b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -40)
+
+[node name="Gravestone-bevel4" parent="Graves" instance=ExtResource("7_xa33b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -40)
+
+[node name="Gravestone-wide" parent="Graves" instance=ExtResource("8_0qolv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8)
+
+[node name="Gravestone-wide2" parent="Graves" instance=ExtResource("8_0qolv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -8)
+
+[node name="Gravestone-wide3" parent="Graves" instance=ExtResource("8_0qolv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -8)
+
+[node name="Gravestone-wide4" parent="Graves" instance=ExtResource("8_0qolv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -8)
+
+[node name="Trees" type="GridMap" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh_library = ExtResource("9_20mc2")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(1, 1, 74, 3, 1, 74, 5, 1, 71, 2, 3, 71, 1, 4, 74, 4, 5, 74, 6, 5, 74, 7, 4, 71, 6, 3, 74, 8, 3, 71, 2, 65535, 71, 1, 65535, 71, 4, 65535, 71, 3, 65533, 74, 2, 65532, 74, 5, 65531, 74, 5, 65533, 71, 7, 65531, 74, 7, 65533, 71, 1, 65531, 71, 65527, 0, 71, 65531, 0, 74, 65534, 0, 74, 65535, 65530, 71, 65527, 5, 71, 65532, 4, 74, 65534, 2, 74)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Rocks" type="GridMap" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh_library = ExtResource("9_20mc2")
+cell_size = Vector3(1, 2, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65519, 0, 80, 7, 5, 80, 3, 11, 80, 17, 10, 80, 9, 65527, 80, 1, 65524, 80, 16, 10, 81, 8, 5, 81, 65517, 2, 81, 65529, 10, 81, 2, 65524, 81, 10, 65532, 81, 1, 3, 20, 4, 11, 31, 9, 65532, 31, 65528, 10, 31, 65533, 5, 31, 11, 65535, 68, 9, 2, 68, 65528, 4, 81, 65521, 9, 88, 10, 8, 89, 10, 9, 31, 0, 65527, 1048666)
+}
+
+[node name="GraveyardManager" type="Node3D" parent="."]
+script = ExtResource("12_81du0")
+grass_scene = ExtResource("13_ywnne")
+lamp_scene = ExtResource("14_ocbsb")
+
+[node name="MaintenanceSpots" parent="GraveyardManager" instance=ExtResource("13_my4j0")]
