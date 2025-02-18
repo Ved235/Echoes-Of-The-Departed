@@ -28,7 +28,6 @@ sky = SubResource("Sky_cb6ok")
 fog_light_color = Color(0.096046, 0.100317, 0.16859, 1)
 fog_density = 0.03
 fog_sky_affect = 0.85
-volumetric_fog_enabled = true
 volumetric_fog_emission = Color(0.0941176, 0.101961, 0.168627, 1)
 volumetric_fog_sky_affect = 0.85
 
