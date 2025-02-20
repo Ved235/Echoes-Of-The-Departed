@@ -20,12 +20,14 @@ func spawn_grass_spot(position: Vector3):
 	var spot = grass_scene.instantiate()
 	spot.spot_type = maintenance_spots.SpotType.GRASS
 	maintenance_spots.add_child(spot)
+	spot.add_to_group("maintenance_spots")
 	spot.global_position = position
-
+	print("Added grass spot to maintenance_spots group")
 func mark_lamp_broken(lamp_node: Node3D):
 	var spot = lamp_scene.instantiate()
 	spot.spot_type = maintenance_spots.SpotType.LAMP
 	maintenance_spots.add_child(spot)
+	spot.add_to_group("maintenance_spots")
 	spot.global_position = lamp_node.global_position
 	
 	# Get the light node using the correct path
