@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bk15rwjmpxgqi"]
+[gd_scene load_steps=23 format=3 uid="uid://bk15rwjmpxgqi"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_m6kce"]
 [ext_resource type="Texture2D" uid="uid://bad4uej6j8qiv" path="res://AllSkyFree_Sky_ColdNight_Equirect.png" id="1_mhrgv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b36gs872p8dyd" path="res://scenes/lightpost_two.tscn" id="4_lxdmy"]
 [ext_resource type="PackedScene" uid="uid://51bfa1dcqerp" path="res://scenes/lightpost_four.tscn" id="5_a4j5o"]
 [ext_resource type="PackedScene" uid="uid://my2casf7kmk0" path="res://scenes/grass_two.tscn" id="5_cq12w"]
+[ext_resource type="PackedScene" uid="uid://dx72lup8mfte1" path="res://scenes/bench.tscn" id="6_0jicn"]
 [ext_resource type="PackedScene" uid="uid://crnus7ufi4h4f" path="res://scenes/gravestone-cross.tscn" id="7_srp8a"]
 [ext_resource type="PackedScene" uid="uid://dghyvjep6n5oy" path="res://scenes/gravestone-bevel.tscn" id="7_xa33b"]
 [ext_resource type="PackedScene" uid="uid://dpelk8tsqniwb" path="res://scenes/gravestone-wide.tscn" id="8_0qolv"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dad3nrkarvm3n" path="res://scenes/overgrown_grass.tscn" id="13_ywnne"]
 [ext_resource type="PackedScene" uid="uid://cmkfcwwvvaq45" path="res://scenes/broken_lamp.tscn" id="14_ocbsb"]
 [ext_resource type="PackedScene" uid="uid://buwqx45llxk8p" path="res://scenes/challenge_tracker.tscn" id="16_2bixt"]
+[ext_resource type="PackedScene" uid="uid://cq0gk83fipsa5" path="res://scenes/broken_bench.tscn" id="17_dm638"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5wqlk"]
 panorama = ExtResource("1_mhrgv")
@@ -79,6 +81,9 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.93858, 0, 9.86853)
 
 [node name="Lightpost-all2" parent="Props" instance=ExtResource("5_a4j5o")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -70.06, 0, 9.86853)
+
+[node name="Bench1" parent="Props" instance=ExtResource("6_0jicn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.8668, 0, 39.6942)
 
 [node name="Ground" type="Node3D" parent="."]
 
@@ -176,5 +181,7 @@ data = {
 script = ExtResource("12_81du0")
 grass_scene = ExtResource("13_ywnne")
 lamp_scene = ExtResource("14_ocbsb")
+broken_bench_scene = ExtResource("17_dm638")
+fixed_bench_scene = ExtResource("6_0jicn")
 
 [node name="MaintenanceSpots" parent="GraveyardManager" instance=ExtResource("13_my4j0")]

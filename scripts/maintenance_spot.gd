@@ -4,7 +4,7 @@ signal cleaning_started
 signal cleaning_progressed(progress: float)
 signal cleaning_completed
 
-enum SpotType { GRASS, LAMP }
+enum SpotType { GRASS, LAMP, BENCH }
 
 @export var spot_type: SpotType
 @export var cleaning_time: float = 3.0
@@ -83,7 +83,20 @@ func _complete_cleaning():
 					if light:
 						light.light_energy = 1.0
 					break
-	
+					
+	if spot_type == SpotType.BENCH:
+		# Get the stored spawn position
+		var spawn_pos = get_meta("spawn_position")
+		# Get the fixed bench scene
+		var fixed_bench_scene = load("res://scenes/bench.tscn")  # Adjust path as needed
+		if fixed_bench_scene:
+			# Instance and place the fixed bench
+			var fixed_bench = fixed_bench_scene.instantiate()
+			var props = get_node("/root/Main/Props")  # Adjust path as needed
+			props.add_child(fixed_bench)
+			fixed_bench.global_position = spawn_pos	
+			fixed_bench.rotation_degrees = Vector3(0, -90, 0)
+			
 	emit_signal("cleaning_completed")
 	queue_free()
 
