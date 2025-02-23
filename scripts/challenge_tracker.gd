@@ -7,6 +7,8 @@ extends Control
 var total_challenges: int = 0
 var completed_challenges: int = 0
 
+signal all_tasks_completed
+
 func _ready():
 	# Defer the initialization to happen after all nodes are ready
 	call_deferred("initialize_tracker")
@@ -14,6 +16,8 @@ func _ready():
 func initialize_tracker():
 	print("Initializing tracker")
 	# Get all maintenance spots
+
+
 	var spots = get_tree().get_nodes_in_group("maintenance_spots")
 	print("Found maintenance spots: ", spots.size())
 	total_challenges = spots.size()
@@ -39,6 +43,8 @@ func _on_challenge_completed():
 	
 	if completed_challenges >= total_challenges:
 		print("All challenges completed!")
+		emit_signal("all_tasks_completed")
+		
 
 func _update_progress_text():
 	progress_label.text = "%d / %d Tasks Completed" % [completed_challenges, total_challenges]

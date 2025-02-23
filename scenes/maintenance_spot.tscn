@@ -9,6 +9,8 @@ radius = 1.0
 [node name="MaintenanceSpot" type="Node3D"]
 script = ExtResource("1_tor2v")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
 [node name="InteractionArea" type="Area3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 collision_layer = 2

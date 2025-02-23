@@ -14,9 +14,9 @@ func _ready():
 func setup_maintenance_spots():
 	# Add initial maintenance spots
 	spawn_grass_spot(Vector3(0, 0, 0))
-	spawn_grass_spot(Vector3(10, 0, 5))
-	mark_lamp_broken($"../Props/Lightpost-single")
-	mark_lamp_broken($"../Props/Lightpost-single2")
+	#spawn_grass_spot(Vector3(10, 0, 5))
+	#mark_lamp_broken($"../Props/Lightpost-single")
+	#mark_lamp_broken($"../Props/Lightpost-single2")
 	spawn_broken_bench(Vector3(6, 0, -7))  # Add broken benches at desired positions
 
 func spawn_grass_spot(position: Vector3):

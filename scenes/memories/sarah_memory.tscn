@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://d31ogwrk8acf2"]
+
+[ext_resource type="Script" path="res://scripts/sarah_memory.gd" id="1_7wvnt"]
+
+[node name="SarahMemory" type="Node2D"]
+scale = Vector2(20.239, 135.61)
+script = ExtResource("1_7wvnt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.72, 16.16)
+color = Color(0.920693, 0.544592, 0.237941, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -11.5
+offset_right = 81.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sarah Memory Scene"
+horizontal_alignment = 1
+vertical_alignment = 1
