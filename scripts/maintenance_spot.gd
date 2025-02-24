@@ -4,7 +4,7 @@ signal cleaning_started
 signal cleaning_progressed(progress: float)
 signal cleaning_completed
 
-enum SpotType { GRASS, LAMP, BENCH }
+enum SpotType { GRASS, LAMP, BENCH, GRAVE }
 
 @export var spot_type: SpotType
 @export var cleaning_time: float = 3.0
@@ -35,7 +35,7 @@ func _ready():
 	progress_sprite.texture = viewport.get_texture()
 	progress_sprite.hide()
 	# Position the progress bar above the object
-	progress_sprite.position.y = 2
+	progress_sprite.position.y = 1
 	
 	# Connect signals
 	interaction_area.body_entered.connect(_on_player_entered)
@@ -96,7 +96,17 @@ func _complete_cleaning():
 			props.add_child(fixed_bench)
 			fixed_bench.global_position = spawn_pos	
 			fixed_bench.rotation_degrees = Vector3(0, -90, 0)
-			
+	
+	if spot_type == SpotType.GRAVE:
+		var spawn_pos = get_meta("spawn_position")
+		# Get the fixed grave scene
+		var fixed_grave_scene = load("res://scenes/gravestone-bevel.tscn")  # Adjust path as needed
+		if fixed_grave_scene:
+			var fixed_grave = fixed_grave_scene.instantiate()
+			var props = get_node("/root/Main/Props")  # Adjust path as needed
+			props.add_child(fixed_grave)
+			fixed_grave.global_position = spawn_pos	
+
 	emit_signal("cleaning_completed")
 	queue_free()
 

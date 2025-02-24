@@ -4,8 +4,8 @@ extends Node3D
 @export var grass_scene: PackedScene
 @export var lamp_scene: PackedScene
 @export var broken_bench_scene: PackedScene # Scene for broken bench maintenance spot
-@export var fixed_bench_scene: PackedScene  # Scene for the fixed bench
-
+@export var fixed_bench_scene: PackedScene # Scene for the fixed bench
+@export var damaged_grave_scene: PackedScene # Scene for the damaged grave
 @onready var maintenance_spots = $MaintenanceSpots
 
 func _ready():
@@ -17,7 +17,8 @@ func setup_maintenance_spots():
 	#spawn_grass_spot(Vector3(10, 0, 5))
 	#mark_lamp_broken($"../Props/Lightpost-single")
 	#mark_lamp_broken($"../Props/Lightpost-single2")
-	spawn_broken_bench(Vector3(6, 0, -7))  # Add broken benches at desired positions
+	spawn_broken_bench(Vector3(6, 0, -7)) # Add broken benches at desired positions
+	spawn_damaged_grave(Vector3(-32, 0, -40)) # Add damaged grave at desired position
 
 func spawn_grass_spot(position: Vector3):
 	var spot = grass_scene.instantiate()
@@ -52,3 +53,15 @@ func spawn_broken_bench(position: Vector3):
 
 	# Store the position for later replacement
 	broken_bench.set_meta("spawn_position", position)
+
+func spawn_damaged_grave(position: Vector3):
+	# Spawn the damaged grave
+	var grave = damaged_grave_scene.instantiate()
+	grave.spot_type = maintenance_spots.SpotType.GRAVE
+	maintenance_spots.add_child(grave)
+	grave.add_to_group("maintenance_spots")
+	grave.global_position = position
+
+
+	# Store the position for later replacement
+	grave.set_meta("spawn_position", position)
