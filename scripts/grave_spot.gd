@@ -28,15 +28,19 @@ func _ready():
 
 func _on_tasks_completed():
 	tasks_completed = true
-	print("yaya")
 	if player_in_range:
 		prompt_sprite.show()
 
 func _on_player_entered(body: Node3D):
 	# Check if it's actually the player (uses CharacterBody3D)
-	print("player entered")
 	if body is CharacterBody3D:
 		player_in_range = true
+		
+		# Play grave approach sound
+		var sound_manager = get_node("/root/SoundManager")
+		if sound_manager and tasks_completed:
+			sound_manager.play_positioned_sound("grave_approach", global_position, -5.0)
+			
 		if tasks_completed:
 			prompt_sprite.show()
 
@@ -51,6 +55,12 @@ func _input(event):
 
 func start_memory_sequence():
 	emit_signal("interaction_started")
+	
+	# Play memory enter sound
+	var sound_manager = get_node("/root/SoundManager")
+	if sound_manager:
+		sound_manager.play_sound("memory_enter")
+	
 	var memory_manager = get_node("/root/Main/MemoryManager")
 	if memory_manager:
 		memory_manager.load_memory_scene(grave_id)
